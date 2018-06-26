@@ -10,6 +10,7 @@ func main(){
 		d int = 8
 		e string = "hello"
 	)
+	_=c
 	//布尔值怎么表示
-	fmt.Printf("%d\n%s\n%s\n%d\n%s\n",a,b,c,d,e)
+	fmt.Printf("%d\n%s\n%d\n%s\n",a,b,d,e)
 }
