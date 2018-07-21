@@ -7,21 +7,6 @@ import(
     "time"
 )
 
-// func num(length int) {
-//     password := make([]int,length)
-//     for i:=0;i<len(password); i++ {
-//         rand.Seed(time.Now().UnixNano())
-//         number := rand.Intn(9)
-//         password[i] = number
-  
-//     }
-// }
-// const(
-//     numbers = "0123456789"
-//     letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-//     mixletters = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-//     specialLetters = "~!@#$%^&*()_+{}|[]<>?"
-// )
 var numbers = []rune("0123456789")
 var letters = []rune("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
 var mixletters = []rune("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
