@@ -8,6 +8,6 @@ import (
 
 func main() {
 	var c int 
-	c = calc.Add(2,3)
+	c = cal.Add(2,3)
 	fmt.Printf("c=%d\n",c)
 }
