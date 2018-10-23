@@ -7,9 +7,9 @@
 package main
 
 import (
-	"fmt"
-	"log"
-	"net/http"
+"fmt"
+"log"
+"net/http"
 )
 
 //!+main
@@ -26,8 +26,24 @@ func (d dollars) String() string { return fmt.Sprintf("$%.2f", d) }
 type database map[string]dollars
 
 func (db database) ServeHTTP(w http.ResponseWriter, req *http.Request) {
-	for item, price := range db {
-		fmt.Fprintf(w, "%s: %s\n", item, price)
+	switch req.URL.Path {
+	case "/list":
+		for item,price := range db {
+			fmt.Fprintf(w,"%s: %s\n",item,price)
+		}
+	case "/price":
+		item := req.URL.Query().Get("item")
+		price,ok := db[item]
+		if !ok {
+			w.WriteHeader(http.StatusNotFound)
+			fmt.Fprintf(w,"no such item:%q\n",item)
+			return
+		}
+		fmt.Println(w)
+		fmt.Fprintf(w,"%s\n",price)
+	default:
+		w.WriteHeader(http.StatusNotFound)
+		fmt.Fprintf(w,"no such page:%q\n",req.URL)
 	}
 }
 
@@ -44,3 +60,4 @@ type Handler interface {
 func ListenAndServe(address string, h Handler) error
 //!-handler
 */
+
