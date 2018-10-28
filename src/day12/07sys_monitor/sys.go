@@ -42,3 +42,21 @@ func collet() {
 	fmt.Printf("        OS        : %v(%v)   %v  \n", n.Platform, n.PlatformFamily, n.PlatformVersion)
 	fmt.Printf("        Hostname  : %v  \n", n.Hostname)
 }
+func cpuInfo(){
+	cpuinfos,err := cpu.Info()
+	if err != nil {
+		fmt.Printf("Get CPU info failed,err:%v\n",err)
+	}
+	for _,ci := range cpuinfos{
+		fmt.Printf("cpu: %#v\n",ci)
+	}
+
+	for {
+		percent,_ := cpu.Percent(time.Second,false)
+		fmt.Printf("cpu percent:%v\n",percent)
+	}
+}
+func main(){
+	//collet()
+	cpuInfo()
+}

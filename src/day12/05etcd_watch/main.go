@@ -12,7 +12,7 @@ import (
 func main()  {
 
 	client, err := clientv3.New(clientv3.Config{
-		Endpoints: []string{"192.168.20.200:2379"},
+		Endpoints: []string{"127.0.0.1:2379"},
 		DialTimeout:3 * time.Second,
 	})
 
@@ -20,7 +20,7 @@ func main()  {
 
 	fmt.Printf("conn succ\n")
 	for {
-		resultCh := client.Watch(context.Background(), "/logagent/", clientv3.WithPrefix())
+		resultCh := client.Watch(context.Background(), "/logagent/conf", clientv3.WithPrefix())
 		fmt.Printf("wacth return, resultCh:%v\n", resultCh)
 		for v := range resultCh {
 			fmt.Printf("wacth return, v:%v\n", v)

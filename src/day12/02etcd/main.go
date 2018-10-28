@@ -20,7 +20,7 @@ func main() {
 	defer cli.Close()
 
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
-	_, err = cli.Put(ctx, "logagent/conf", "sample_value")
+	_, err = cli.Put(ctx, "/logagent/conf", "sample_value")
 	cancel()
 	if err != nil {
 		fmt.Println("Put failed, err:", err)
@@ -28,7 +28,7 @@ func main() {
 
 	}
 	ctx,cancel = context.WithTimeout(context.Background(),time.Second)
-	resp, err := cli.Get(ctx,"logagent/conf/")
+	resp, err := cli.Get(ctx,"/logagent/conf/")
 	cancel()
 	if err != nil {
 		fmt.Println("Get failed, err:", err)
