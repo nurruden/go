@@ -1,0 +1,173 @@
+{"level":"INFO","timestamp":"2018-12-09 21:31:40.894","file":"demo02/main.go:51","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2018-12-09 21:31:40.895","file":"demo02/main.go:48","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-12-10 14:08:01.337","file":"demo02/main.go:51","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2018-12-10 14:08:01.338","file":"demo02/main.go:48","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-12-10 14:15:21.114","file":"demo02/main.go:51","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2018-12-10 14:15:21.116","file":"demo02/main.go:48","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-12-10 14:15:31.859","file":"cv/resume.go:9","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 14:15:32.713","file":"cv/resume.go:9","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 14:43:13.222","file":"demo02/main.go:51","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2018-12-10 14:43:13.223","file":"demo02/main.go:48","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-12-10 14:43:24.117","file":"cv/resume.go:10","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 14:43:26.810","file":"cv/resume.go:10","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 14:43:27.482","file":"cv/resume.go:10","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 14:43:27.746","file":"cv/resume.go:10","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 14:43:27.975","file":"cv/resume.go:10","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 14:43:28.183","file":"cv/resume.go:10","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 14:43:28.371","file":"cv/resume.go:10","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 14:43:28.570","file":"cv/resume.go:10","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 14:43:28.765","file":"cv/resume.go:10","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 14:46:00.174","file":"demo02/main.go:51","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2018-12-10 14:46:00.176","file":"demo02/main.go:48","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-12-10 14:46:02.522","file":"cv/resume.go:10","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 14:46:04.603","file":"cv/resume.go:10","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 15:00:28.172","file":"demo02/main.go:51","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2018-12-10 15:00:28.173","file":"demo02/main.go:48","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-12-10 15:00:32.997","file":"cv/resume.go:11","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 15:01:27.214","file":"demo02/main.go:51","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2018-12-10 15:01:27.215","file":"demo02/main.go:48","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-12-10 15:01:28.727","file":"cv/resume.go:11","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 15:03:24.627","file":"demo02/main.go:51","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2018-12-10 15:03:24.628","file":"demo02/main.go:65","msg":"Waiting for the router, retry in 1 second."}
+{"level":"INFO","timestamp":"2018-12-10 15:03:25.634","file":"demo02/main.go:48","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-12-10 15:03:38.323","file":"cv/resume.go:11","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 15:05:59.566","file":"demo02/main.go:51","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2018-12-10 15:05:59.568","file":"demo02/main.go:48","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-12-10 15:06:02.090","file":"cv/resume.go:11","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 15:22:37.384","file":"demo02/main.go:51","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2018-12-10 15:22:37.385","file":"demo02/main.go:48","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-12-10 15:22:45.443","file":"cv/resume.go:18","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 15:23:29.144","file":"demo02/main.go:51","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2018-12-10 15:23:29.146","file":"demo02/main.go:48","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-12-10 15:23:32.322","file":"cv/resume.go:18","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 15:27:11.681","file":"cv/resume.go:18","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 15:27:12.998","file":"cv/resume.go:18","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 15:27:13.671","file":"cv/resume.go:18","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 15:27:13.921","file":"cv/resume.go:18","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 15:27:14.564","file":"cv/resume.go:18","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 15:27:14.786","file":"cv/resume.go:18","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 15:27:15.027","file":"cv/resume.go:18","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 15:27:23.790","file":"demo02/main.go:51","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2018-12-10 15:27:23.791","file":"demo02/main.go:48","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-12-10 15:27:28.877","file":"cv/resume.go:18","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 15:27:49.231","file":"cv/resume.go:18","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 15:27:49.883","file":"cv/resume.go:18","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 15:27:50.135","file":"cv/resume.go:18","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 15:27:50.376","file":"cv/resume.go:18","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 15:27:50.603","file":"cv/resume.go:18","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 15:27:50.855","file":"cv/resume.go:18","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 15:30:05.133","file":"demo02/main.go:51","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2018-12-10 15:30:05.135","file":"demo02/main.go:48","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-12-10 15:30:08.640","file":"cv/resume.go:18","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 15:33:18.800","file":"demo02/main.go:51","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2018-12-10 15:33:18.803","file":"demo02/main.go:48","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-12-10 15:33:21.501","file":"cv/resume.go:18","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 15:35:03.639","file":"demo02/main.go:51","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2018-12-10 15:35:03.640","file":"demo02/main.go:48","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-12-10 15:35:08.002","file":"cv/resume.go:18","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 15:49:36.853","file":"demo02/main.go:51","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2018-12-10 15:49:36.855","file":"demo02/main.go:48","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-12-10 15:49:40.407","file":"cv/resume.go:18","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 15:50:36.353","file":"demo02/main.go:51","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2018-12-10 15:50:36.355","file":"demo02/main.go:48","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-12-10 15:50:39.189","file":"cv/resume.go:18","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 15:52:29.369","file":"demo02/main.go:51","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2018-12-10 15:52:29.371","file":"demo02/main.go:48","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-12-10 15:52:32.419","file":"cv/resume.go:18","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 15:54:43.287","file":"demo02/main.go:51","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2018-12-10 15:54:43.288","file":"demo02/main.go:48","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-12-10 15:54:46.709","file":"cv/resume.go:18","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 15:55:33.527","file":"demo02/main.go:51","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2018-12-10 15:55:33.528","file":"demo02/main.go:48","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-12-10 15:55:39.117","file":"cv/resume.go:18","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 16:09:08.541","file":"demo02/main.go:51","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2018-12-10 16:09:08.543","file":"demo02/main.go:48","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-12-10 16:09:11.687","file":"cv/resume.go:18","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 16:10:15.055","file":"demo02/main.go:51","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2018-12-10 16:10:15.057","file":"demo02/main.go:48","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-12-10 16:10:18.782","file":"cv/resume.go:17","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 16:12:31.475","file":"demo02/main.go:51","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2018-12-10 16:12:31.476","file":"demo02/main.go:48","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-12-10 16:12:36.921","file":"cv/resume.go:17","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 16:16:48.604","file":"demo02/main.go:51","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2018-12-10 16:16:48.605","file":"demo02/main.go:48","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-12-10 16:16:51.443","file":"cv/resume.go:17","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 16:16:53.453","file":"cv/resume.go:17","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 16:16:54.434","file":"cv/resume.go:17","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 16:16:54.690","file":"cv/resume.go:17","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 16:16:54.938","file":"cv/resume.go:17","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 16:16:55.165","file":"cv/resume.go:17","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 16:16:55.368","file":"cv/resume.go:17","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 16:16:55.543","file":"cv/resume.go:17","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 16:16:55.736","file":"cv/resume.go:17","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 16:17:39.604","file":"demo02/main.go:51","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2018-12-10 16:17:39.605","file":"demo02/main.go:48","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-12-10 16:17:43.383","file":"cv/resume.go:17","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 16:18:35.040","file":"demo02/main.go:51","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2018-12-10 16:18:35.041","file":"demo02/main.go:48","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-12-10 16:18:37.876","file":"cv/resume.go:17","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 16:27:38.677","file":"demo02/main.go:51","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2018-12-10 16:27:38.678","file":"demo02/main.go:65","msg":"Waiting for the router, retry in 1 second."}
+{"level":"INFO","timestamp":"2018-12-10 16:27:39.682","file":"demo02/main.go:48","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-12-10 16:27:48.165","file":"cv/resume.go:17","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 16:32:11.659","file":"demo02/main.go:51","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2018-12-10 16:32:11.660","file":"demo02/main.go:48","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-12-10 16:32:33.137","file":"cv/resume.go:17","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 16:36:56.399","file":"demo02/main.go:51","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2018-12-10 16:36:56.401","file":"demo02/main.go:48","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-12-10 16:36:58.674","file":"cv/resume.go:17","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 16:38:00.201","file":"demo02/main.go:51","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2018-12-10 16:38:00.202","file":"demo02/main.go:48","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-12-10 16:38:03.569","file":"cv/resume.go:17","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 16:39:17.266","file":"demo02/main.go:51","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2018-12-10 16:39:17.267","file":"demo02/main.go:48","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-12-10 16:39:35.744","file":"cv/resume.go:17","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 16:40:13.171","file":"cv/resume.go:17","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 16:40:14.114","file":"cv/resume.go:17","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 16:40:14.381","file":"cv/resume.go:17","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 16:40:14.653","file":"cv/resume.go:17","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 16:42:57.395","file":"demo02/main.go:51","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2018-12-10 16:42:57.396","file":"demo02/main.go:65","msg":"Waiting for the router, retry in 1 second."}
+{"level":"INFO","timestamp":"2018-12-10 16:42:58.401","file":"demo02/main.go:48","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-12-10 16:42:58.679","file":"cv/resume.go:17","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 16:44:56.051","file":"demo02/main.go:51","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2018-12-10 16:44:56.052","file":"demo02/main.go:48","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-12-10 16:44:58.640","file":"cv/resume.go:17","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 16:47:26.798","file":"demo02/main.go:51","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2018-12-10 16:47:26.799","file":"demo02/main.go:65","msg":"Waiting for the router, retry in 1 second."}
+{"level":"INFO","timestamp":"2018-12-10 16:47:27.810","file":"demo02/main.go:48","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-12-10 16:47:30.368","file":"cv/resume.go:17","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 17:04:06.383","file":"config/config.go:61","msg":"Config file changed: /Users/northstar/Documents/go/src/restful/demo02/conf/config.yaml"}
+{"level":"INFO","timestamp":"2018-12-10 17:53:10.153","file":"demo02/main.go:51","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2018-12-10 17:53:10.155","file":"demo02/main.go:48","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-12-10 17:53:15.751","file":"cv/resume.go:57","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 17:54:51.141","file":"demo02/main.go:51","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2018-12-10 17:54:51.142","file":"demo02/main.go:48","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-12-10 17:54:54.540","file":"cv/resume.go:57","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 17:55:01.871","file":"cv/resume.go:57","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 17:55:02.720","file":"cv/resume.go:57","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 17:55:03.274","file":"cv/resume.go:57","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 17:55:03.478","file":"cv/resume.go:57","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 17:55:03.671","file":"cv/resume.go:57","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 17:55:03.879","file":"cv/resume.go:57","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 17:55:04.118","file":"cv/resume.go:57","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 17:56:44.314","file":"config/config.go:64","msg":"Config file changed: /Users/northstar/Documents/go/src/restful/demo02/conf/config.yaml"}
+{"level":"INFO","timestamp":"2018-12-10 17:56:52.291","file":"demo02/main.go:51","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2018-12-10 17:56:52.295","file":"demo02/main.go:48","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-12-10 17:56:52.632","file":"cv/resume.go:57","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 18:01:05.739","file":"demo02/main.go:51","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2018-12-10 18:01:05.740","file":"demo02/main.go:48","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-12-10 18:01:06.031","file":"cv/resume.go:58","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 18:01:50.170","file":"demo02/main.go:51","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2018-12-10 18:01:50.171","file":"demo02/main.go:48","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-12-10 18:01:52.411","file":"cv/resume.go:58","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 18:02:00.002","file":"cv/resume.go:58","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 18:06:43.038","file":"demo02/main.go:51","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2018-12-10 18:06:43.039","file":"demo02/main.go:48","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-12-10 18:06:46.685","file":"cv/resume.go:58","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 18:08:49.160","file":"demo02/main.go:51","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2018-12-10 18:08:49.161","file":"demo02/main.go:48","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-12-10 18:08:52.737","file":"cv/resume.go:58","msg":"get something"}
+{"level":"INFO","timestamp":"2018-12-10 18:09:38.715","file":"demo02/main.go:51","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2018-12-10 18:09:38.716","file":"demo02/main.go:48","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-12-10 18:09:40.234","file":"cv/resume.go:58","msg":"get something"}
