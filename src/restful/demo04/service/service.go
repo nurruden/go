@@ -2,9 +2,10 @@ package service
 
 import (
 	"fmt"
-	"restful/demo03/model"
-	"restful/demo03/util"
 	"sync"
+
+	"restful/demo04/model"
+	"restful/demo04/util"
 )
 
 func ListUser(username string, offset, limit int) ([]*model.UserInfo, uint64, error) {

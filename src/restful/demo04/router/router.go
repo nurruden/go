@@ -2,10 +2,10 @@ package router
 
 import (
 	"net/http"
-	"restful/demo03/handler/user"
 
-	"restful/demo03/handler/sd"
-	"restful/demo03/router/middleware"
+	"restful/demo04/handler/sd"
+	"restful/demo04/handler/user"
+	"restful/demo04/router/middleware"
 
 	"github.com/gin-gonic/gin"
 )
@@ -22,7 +22,11 @@ func Load(g *gin.Engine, mw ...gin.HandlerFunc) *gin.Engine {
 	g.NoRoute(func(c *gin.Context) {
 		c.String(http.StatusNotFound, "The incorrect API route.")
 	})
+
+	// api for authentication functionalities
 	g.POST("/login", user.Login)
+
+	// The user handlers, requiring authentication
 	u := g.Group("/v1/user")
 	u.Use(middleware.AuthMiddleware())
 	{

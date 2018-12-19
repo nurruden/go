@@ -14,7 +14,7 @@ func Create(c *gin.Context) {
 	log.Info("User Create function is called.", lager.Data{"X-Request-Id": util.GetReqID(c)})
 	var r CreateRequest
 	if err := c.Bind(&r); err != nil {
-		log.Error("Bing failed,",err)
+		log.Error("Bing failed,", err)
 		SendResponse(c, errno.ErrBind, nil)
 		return
 	}
@@ -26,16 +26,16 @@ func Create(c *gin.Context) {
 
 	if err := u.Validate(); err != nil {
 		SendResponse(c, errno.ErrValidation, nil)
-		log.Error("Validation failed.",err)
+		log.Error("Validation failed.", err)
 		return
 	}
 
 	if err := u.Encrypt(); err != nil {
 		SendResponse(c, errno.ErrDatabase, nil)
-		log.Error("Password encrypted failed",err)
+		log.Error("Password encrypted failed", err)
 		return
 	}
-    log.Info("start to create")
+	log.Info("start to create")
 	if err := u.Create(); err != nil {
 		SendResponse(c, errno.ErrDatabase, nil)
 		return

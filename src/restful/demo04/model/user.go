@@ -2,11 +2,14 @@ package model
 
 import (
 	"fmt"
-	"gopkg.in/go-playground/validator.v9"
-	"restful/demo03/pkg/auth"
-	"restful/demo03/pkg/constvar"
+
+	"restful/demo04/pkg/auth"
+	"restful/demo04/pkg/constvar"
+
+	validator "gopkg.in/go-playground/validator.v9"
 )
 
+// User represents a registered user.
 type UserModel struct {
 	BaseModel
 	Username string `json:"username" gorm:"column:username;not null" binding:"required" validate:"min=1,max=32"`
@@ -38,8 +41,9 @@ func (u *UserModel) Update() error {
 func GetUser(username string) (*UserModel, error) {
 	u := &UserModel{}
 	d := DB.Self.Where("username = ?", username).First(&u)
-	fmt.Printf("The result is: %v", u)
-	fmt.Printf("Error is: %v", d.Error)
+	fmt.Printf("The result is: %v",u)
+	fmt.Printf("Error is: %v",d.Error )
+
 	return u, d.Error
 }
 
@@ -66,7 +70,6 @@ func ListUser(username string, offset, limit int) ([]*UserModel, uint64, error) 
 
 // Compare with the plain text password. Returns true if it's the same as the encrypted one (in the `User` struct).
 func (u *UserModel) Compare(pwd string) (err error) {
-
 	err = auth.Compare(u.Password, pwd)
 	return
 }
