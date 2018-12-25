@@ -2,12 +2,14 @@ package router
 
 import (
 	"net/http"
-	"restful/demo03/handler/user"
-
+	_ "restful/demo03/docs"
 	"restful/demo03/handler/sd"
+	"restful/demo03/handler/user"
 	"restful/demo03/router/middleware"
 
 	"github.com/gin-gonic/gin"
+	"github.com/swaggo/gin-swagger"
+	"github.com/swaggo/gin-swagger/swaggerFiles"
 )
 
 // Load loads the middlewares, routes, handlers.
@@ -22,6 +24,7 @@ func Load(g *gin.Engine, mw ...gin.HandlerFunc) *gin.Engine {
 	g.NoRoute(func(c *gin.Context) {
 		c.String(http.StatusNotFound, "The incorrect API route.")
 	})
+	g.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 	g.POST("/login", user.Login)
 	u := g.Group("/v1/user")
 	u.Use(middleware.AuthMiddleware())

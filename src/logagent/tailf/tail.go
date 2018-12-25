@@ -1,51 +1,111 @@
 package tailf
 
 import (
-	"xlog"
 	"fmt"
 	"github.com/hpcloud/tail"
+	"gostudy03/logagent/common"
+	"context"
+	"xlog"
+	"encoding/json"
+	"logagent/kafka"
 )
 
-var (
-	tailObj *tail.Tail
-)
+type TailTask struct {
+	Path string
+	ModuleName string
+	Topic string
+	tailx *tail.Tail
+	ctx context.Context
+	cancel context.CancelFunc
+}
 
-func Init(filename string) (err error) {
+var localIP string
 
-	tailObj, err = tail.TailFile(filename, tail.Config{
+func init() {
+	var err error
+	localIP, err = common.GetLocalIP()
+	if err != nil {
+		xlog.LogError("get local ip failed, err:%v", err)
+		panic(fmt.Sprintf("get local ip failed, er:%v", err))
+	}
+}
+
+
+func NewTailTask(path, module, topic string)(tailTask *TailTask, err error) {
+	tailTask = &TailTask{}
+	err = tailTask.Init(path, module, topic)
+	return
+}
+
+func (t *TailTask) Init(path, module, topic string) (err error) {
+
+	t.Path = path
+	t.ModuleName = module
+	t.Topic = topic
+
+	t.ctx, t.cancel = context.WithCancel(context.Background())
+	t.tailx, err = tail.TailFile(path, tail.Config{
 		ReOpen:    true,
 		Follow:    true,
 		Location:  &tail.SeekInfo{Offset: 0, Whence: 2},
 		MustExist: false,
 		Poll:      true,
 	})
+
 	if err != nil {
 		xlog.LogError("tail file err:", err)
 		return
 	}
 	return
-	/*
-	var msg *tail.Line
-	var ok bool
-	for true {
-		msg, ok = <-tails.Lines
-		if !ok {
-			fmt.Printf("tail file close reopen, filename:%s\n", tails.Filename)
-			time.Sleep(100 * time.Millisecond)
-			continue
-		}
-		fmt.Println("msg:", msg.Text)
-	}
-	*/
 }
 
-func ReadLine() (msg *tail.Line, err error) {
-	var ok bool
-	msg, ok = <- tailObj.Lines
-	if !ok {
-		err = fmt.Errorf("read line failed")
-		return
-	}
+func (t *TailTask) Key() string{
+	key := fmt.Sprintf("%s_%s_%s", t.Path, t.ModuleName, t.Topic)
+	return key
+}
 
-	return
+func (t *TailTask) Stop() {
+	t.cancel()
+}
+
+func (t *TailTask) Run() {
+	for {
+		select {
+		case <- t.ctx.Done():
+			xlog.LogWarn("task path:%s module:%s topic:%s is exit", t.Path, t.ModuleName, t.Topic)
+			return
+		case line, ok := <- t.tailx.Lines:
+			if !ok {
+				xlog.LogWarn("get message from tailf failed")
+				continue
+			}
+
+			if len(line.Text) == 0 {
+				continue
+			}
+
+			xlog.LogDebug("line:%s", line.Text)
+			data := &common.LogAgentData{
+				IP: localIP,
+				Data: line.Text,
+			}
+
+			jsonData, err := json.Marshal(data)
+			if err != nil {
+				continue
+			}
+
+			msg := &kafka.Message{
+				Data: string(jsonData),
+				Topic: t.Topic,
+			}
+
+			err = kafka.SendLog(msg)
+			if err != nil {
+				xlog.LogWarn("send log failed, err:%v\n", err)
+				continue
+			}
+			xlog.LogDebug("send to kafka succ\n")
+		}
+	}
 }

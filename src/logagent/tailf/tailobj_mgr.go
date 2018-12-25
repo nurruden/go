@@ -3,6 +3,7 @@ package tailf
 
 import (
 	"logagent/common"
+	"sync"
 	"xlog"
 )
 
@@ -46,7 +47,7 @@ func Init(collectLogList []*common.CollectConfig, etcdCh <- chan []*common.Colle
 
 func (t *TailTaskMgr) listTask() {
 	for key, task := range t.tailTaskMap {
-		xlog.LogDebug("=============task:%s======== is running",
+		xlog.LogDebug("=============key:%s task:%s======== is running",
 			key, task.Topic)
 	}
 }
@@ -124,7 +125,8 @@ func (t *TailTaskMgr) exists(conf *common.CollectConfig) (bool) {
 
 
 
-func Run() {
+func Run(wg *sync.WaitGroup) {
 	//tailTaskMgr主要做一些日志任务收集的管理工作，比如新增日志收集任务、删除日志收集任务
 	tailTaskMgr.run()
+	wg.Done()
 }

@@ -1,9 +1,8 @@
 package kafka
 
-
 import (
 	"fmt"
-	"github.com/Shopify/sarama"
+	"github.com/shopify/sarama"
 	"xlog"
 )
 
@@ -13,7 +12,7 @@ var (
 )
 
 type Message struct {
-	Line string
+	Data string
 	Topic string
 }
 
@@ -52,7 +51,8 @@ func sendKafka() {
 
 		kafkaMsg := &sarama.ProducerMessage{}
 		kafkaMsg.Topic =  msg.Topic
-		kafkaMsg.Value = sarama.StringEncoder(msg.Line)
+		kafkaMsg.Value = sarama.StringEncoder(msg.Data)
+
 
 		pid, offset, err := client.SendMessage(kafkaMsg)
 		if err != nil {
@@ -65,7 +65,7 @@ func sendKafka() {
 
 func SendLog(msg *Message) (err error) {
 
-	if len(msg.Line) == 0 {
+	if len(msg.Data) == 0 {
 		return
 	}
 
