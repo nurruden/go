@@ -1,6 +1,8 @@
 package main
 
 import (
+	"allanlogagent/common"
+	"allanlogagent/etcd"
 	"allanlogagent/kafka"
 	"allanlogagent/tailf"
 	"fmt"
@@ -10,32 +12,10 @@ import (
 )
 
 var (
-	appConfig AppConfig
+	appConfig common.AppConfig
 )
 
-type AppConfig struct {
-	KafkaConf KafkaConfig `ini:"kafka"`
-	CollectLogsConf CollectLogsConfig	`ini:"collect_log_conf""`
-	LogConf LogConfig `ini:"logs"`
-}
 
-type KafkaConfig struct {
-	Address	string `ini:"address"`
-	QueueSize int `ini:queue_size`
-}
-
-type CollectLogsConfig struct{
-	LogFilenames string	`ini:"log_filenames"`
-
-}
-
-type LogConfig struct {
-	LogLevel string `ini:"log_level"`
-	Filename string `ini:"filename"`
-	LogType string `ini:"log_type"`
-	Module string `ini:"module"`
-
-}
 
 func initConfig(filename string) (err error) {
 	err = oconfig.UnMarshalFile(filename,&appConfig)
@@ -43,31 +23,15 @@ func initConfig(filename string) (err error) {
 		return
 	}
 
-	xlog.LogDebug("Read configuration successfully, configuration:%#v\n",appConfig)
+	xlog.LogDebug("Read configuration successfully, configuration:%#v",appConfig)
 
 	return
 }
 
 func run()(err error) {
 	//read log data from tailf and send it out with kafka
-
-	for {
-		//read log data from tailf
-		line, err := tailf.ReadLine()
-		if err != nil {
-			continue
-		}
-		xlog.LogDebug("Line:%s",line.Text)
-		msg := &kafka.Message{
-			Line: line.Text,
-			Topic: "nginx_log",
-		}
-		err = kafka.SendLog(msg)
-		if err != nil {
-			xlog.LogWarn("Kafka send log failed, err:%v",err)
-		}
-		xlog.LogDebug("Send to kafka successfully")
-	}
+	//Inspect etcd continually, if yes, then manage log collect
+	tailf.Run()
 	return
 }
 
@@ -119,7 +83,18 @@ func main() {
 	}
 	xlog.LogDebug("Init kafka successfully")
 
-	err = tailf.Init(appConfig.CollectLogsConf.LogFilenames)
+    //Init etcd client
+	address = strings.Split(appConfig.EtcdConf.Address,",")
+	err = etcd.Init(address,appConfig.EtcdConf.EtcdKey)
+	if err != nil {
+		panic(fmt.Sprintf("Init etcd client failed,err:%v",err))
+	}
+	xlog.LogDebug("Init etcd successfully address:%v",address)
+
+	logCollectConf,err := etcd.GetConfig(appConfig.EtcdConf.EtcdKey)
+	xlog.LogDebug("etcd conf:%#v",logCollectConf)
+    watch := etcd.Watch()
+	err = tailf.Init(logCollectConf,watch)
 	if err != nil {
 		panic(fmt.Sprintf("Init tailf client failed,err:%v",err))
 	}
