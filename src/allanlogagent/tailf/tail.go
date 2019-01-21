@@ -1,10 +1,12 @@
 package tailf
 
 import (
+	"allanlogagent/common"
 	"allanlogagent/kafka"
-	"fmt"
-	"github.com/hpcloud/tail"
 	"context"
+	"fmt"
+	"github.com/gin-gonic/gin/json"
+	"github.com/hpcloud/tail"
 	"xlog"
 )
 
@@ -16,6 +18,18 @@ type TailTask struct {
 	ctx context.Context
 	cancel context.CancelFunc
 }
+
+var localIP string
+
+func init() {
+	var err error
+	localIP, err = common.GetLocalIP()
+	if err != nil {
+		xlog.LogError("get local ip failed, err:%v", err)
+		panic(fmt.Sprintf("get local ip failed, er:%v", err))
+	}
+}
+
 
 func NewTailTask(path, module, topic string)(tailTask *TailTask, err error) {
 	tailTask = &TailTask{}
@@ -39,7 +53,6 @@ func (t *TailTask) Init(path, module, topic string) (err error) {
 	})
 
 	if err != nil {
-
 		xlog.LogError("tail file err:", err)
 		return
 	}
@@ -72,13 +85,22 @@ func (t *TailTask) Run() {
 			}
 
 			xlog.LogDebug("line:%s", line.Text)
+			data := &common.LogAgentData{
+				IP: localIP,
+				Data: line.Text,
+			}
+
+			jsonData, err := json.Marshal(data)
+			if err != nil {
+				continue
+			}
 
 			msg := &kafka.Message{
-				Line: line.Text,
+				Data: string(jsonData),
 				Topic: t.Topic,
 			}
 
-			err := kafka.SendLog(msg)
+			err = kafka.SendLog(msg)
 			if err != nil {
 				xlog.LogWarn("send log failed, err:%v\n", err)
 				continue

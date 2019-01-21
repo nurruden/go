@@ -1,12 +1,12 @@
 package main
 
 import (
+	"allanlogagent/common"
 	"context"
-	"time"
-	"go.etcd.io/etcd/clientv3"
-	"logagent/common"
-	"fmt"
 	"encoding/json"
+	"fmt"
+	"go.etcd.io/etcd/clientv3"
+	"time"
 )
 
 
@@ -18,7 +18,12 @@ func main()  {
 	})
 
 	defer client.Close()
+    localIP,err := common.GetLocalIP()
+    if err != nil {
+    	fmt.Printf("Get local ip failed,err:%v",err)
+	}
 
+    fmt.Printf("Get local ip succ,ip:%v",localIP)
 	var logCollectArray []common.CollectConfig
 	logCollect := common.CollectConfig{
 		Topic:"nginx_log",
@@ -43,7 +48,9 @@ func main()  {
 		fmt.Printf("marshal failed, conf:%#v\n", logCollectArray)
 		return
 	}
-	_, err = client.Put(context.Background(), "/allanlogagent/conf", string(data))
+
+	etcdKey := fmt.Sprintf("/allanlogagent/%s/conf",localIP)
+	_, err = client.Put(context.Background(), etcdKey, string(data))
 	if err != nil {
 		fmt.Printf("put failed, err:%v\n", err)
 	}

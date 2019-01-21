@@ -1,8 +1,9 @@
 package main
 
 import (
+	"context"
 	"fmt"
-	"gopkg.in/olivere/elastic.v2"
+	"github.com/olivere/elastic"
 	"xlog"
 )
 
@@ -29,7 +30,7 @@ func main(){
 			Age:28,
 			Desc: `what a fuck`,
 		}
-		_, err := client.Index().Index("account2").Type("Person").BodyJson(a).Do()
+		_, err := client.Index().Index("account2").Type("Person").BodyJson(a).Do(context.Background())
 		if err != nil{
 			xlog.LogError("Insert fail,err: %v",err)
 		}
