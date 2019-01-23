@@ -13,6 +13,7 @@ const (
 	username      = "admin"
 	password      = ""
 	CPUMeasurement = "cpu_usage"
+	MEMMeasurement = "mem_used"
 )
 
 var (
@@ -60,6 +61,8 @@ func procSystemInfo(sysInfo *collect_sys_info.SystemInfo) {
 	switch sysInfo.Type {
 	case "cpu":
 		procCpu(sysInfo)
+	case "mem":
+		procMEM(sysInfo)
 	}
 }
 
@@ -105,4 +108,50 @@ func procCpu(sysInfo *collect_sys_info.SystemInfo) {
 	}
 
 	xlog.LogDebug("insert cpu data to influx db succ")
+}
+
+func procMEM(sysInfo *collect_sys_info.SystemInfo) {
+	var memInfo = &collect_sys_info.MemInfo{}
+	err := json.Unmarshal([]byte(sysInfo.Data), memInfo)
+	if err != nil {
+		xlog.LogError("unmarshal meminfo failed, err:%v", err)
+		return
+	}
+
+	xlog.LogDebug("influx get use_rate info succ, use_rate:%#v", memInfo)
+
+	bp, err := client.NewBatchPoints(client.BatchPointsConfig{
+		Database:  MyDB,
+		Precision: "s",
+	})
+	if err != nil {
+		xlog.LogError("new batch points failed, err:%v", err)
+		return
+	}
+
+	tags := map[string]string{"host": sysInfo.IP}
+	fields := map[string]interface{}{
+		"use_rate":   memInfo.UseRate,
+		"free": float64(memInfo.Free) / float64(memInfo.Total),
+
+	}
+
+	pt, err := client.NewPoint(
+		MEMMeasurement,
+		tags,
+		fields,
+		time.Now(),
+	)
+	if err != nil {
+		xlog.LogError("new point failed, err:%v", err)
+		return
+	}
+
+	bp.AddPoint(pt)
+	if err := influxClient.Write(bp); err != nil {
+		xlog.LogError("insert memory data to influxdb failed, err:%v", err)
+		return
+	}
+
+	xlog.LogDebug("insert mem data to influx db succ")
 }

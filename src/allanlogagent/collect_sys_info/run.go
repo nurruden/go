@@ -209,7 +209,7 @@ func doCollectMem()  {
 	memInfo.Buffer = mInfo.Buffers
 	memInfo.Cache = mInfo.Cached
 	memInfo.UseRate = mInfo.UsedPercent
-
+	xlog.LogDebug("collect mem succ, info:%#v", memInfo)
 	sendToKafka(SystemTypeMem, &memInfo)
 }
 
@@ -299,6 +299,7 @@ func doCollectNet() {
 
 	lastNetInfo = &netInfo
 	lastCollectUnixStamp = curTimeStamp
+	xlog.LogDebug("collect net succ, info:%#v", netInfo)
 	sendToKafka(SystemTypeNet, &netInfo)
 }
 
